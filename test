@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Web Stability Test</title>
+<style>
+body {
+  margin:0; padding:12px;
+  background:#0f0f0f; color:#eee;
+  font-family:system-ui;
+}
+button,input { font-size:16px; margin:6px 0 }
+#box { display:flex; flex-wrap:wrap }
+.cell {
+  width:20px; height:20px; margin:1px;
+  background:hsl(200,70%,50%);
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  from { transform:rotate(0deg) }
+  to { transform:rotate(360deg) }
+}
+</style>
+</head>
+<body>
+
+<h2>📱 Web-Stabilitätstest</h2>
+
+<label>Laststufe:
+<input type="range" min="1" max="10" value="1" id="load"></label>
+
+<br>
+<button onclick="start()">Start</button>
+<button onclick="stopTest()">STOP</button>
+
+<p id="status">Bereit.</p>
+<div id="box"></div>
+
+<script>
+let running=false, timer;
+
+function start(){
+  if(running) return;
+  running=true;
+  loop();
+}
+
+function stopTest(){
+  running=false;
+  document.getElementById("box").innerHTML="";
+  document.getElementById("status").textContent="Gestoppt.";
+  clearTimeout(timer);
+}
+
+function loop(){
+  if(!running) return;
+
+  const load=+document.getElementById("load").value;
+  const box=document.getElementById("box");
+
+  for(let i=0;i<load*40;i++){
+    const d=document.createElement("div");
+    d.className="cell";
+    box.appendChild(d);
+  }
+
+  let x=0;
+  for(let i=0;i<load*120000;i++){
+    x+=Math.sqrt(i);
+  }
+
+  document.getElementById("status").textContent =
+    "DOM-Elemente: " + box.children.length;
+
+  timer=setTimeout(loop,100);
+}
+</script>
+
+</body>
+</html>
