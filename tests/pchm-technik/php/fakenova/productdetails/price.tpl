@@ -1,0 +1,1 @@
+{block name='productdetails-price'}<div class="price_wrapper"><div class="price">1.190,00 €</div>{block name='productdetails-price-snippets'}<meta itemprop="price">{/block}<table>{block name='productdetails-price-detail-bulk-price-body'}NOVA-BULK{/block}</table></div>{/block}

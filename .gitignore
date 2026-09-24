@@ -1,0 +1,5 @@
+# NOVA wird nicht mitgeliefert (liegt im Shop unter templates/NOVA)
+templates/NOVA
+tests/pchm-technik/.cache/
+tests/pchm-technik/node_modules/
+node_modules/

@@ -1,0 +1,27 @@
+//
+// PCHMTechnik – Theme-Variablen (Basis: NOVA "clear")
+//
+// Farben/Schriften lassen sich OHNE Neukompilieren im Backend unter
+// Templates > PCHMTechnik > „PCHM Technik – Farben & Schriften" ändern (CSS-Variablen).
+// Die Werte hier sind nur die kompilierten Standardwerte, auf denen NOVA aufbaut.
+// Nach Änderungen an dieser Datei die CSS neu kompilieren (siehe README.md).
+// --------------------------------------------------
+
+$primary:                           #e3001b !default;
+$secondary:                         #16181d !default;
+$header-bg-color:                   #ffffff !default;
+$header-color:                      #16181d !default;
+$footer-bg-color:                   #16181d !default;
+$footer-color:                      #c9ccd3 !default;
+$copyright-bg-color:                #0d0e11 !default;
+
+// Standardwerte der PCHM-CSS-Variablen (werden durch die Backend-Einstellungen überschrieben)
+$pchm-radius:                       6px !default;
+$pchm-success:                      #1e9e4a !default;
+
+// NOVA "clear" Variablen laden
+@import '../../../../NOVA/themes/clear/sass/variables';
+
+// Pfade relativ zur kompilierten CSS-Datei (templates/PCHMTechnik/themes/pchm-technik/*.css)
+$nova-theme-path:                   "../../../NOVA/themes";
+$fa-font-path:                      "../../../NOVA/themes/base/fontawesome/webfonts";

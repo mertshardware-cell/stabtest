@@ -1,0 +1,13 @@
+{
+  "name": "pchm-technik-tests",
+  "private": true,
+  "description": "Tests und Build für das NOVA-Child-Template PCHMTechnik",
+  "scripts": {
+    "build:css": "sass --quiet --style=expanded ../../templates/PCHMTechnik/themes/pchm-technik/sass/pchm-technik.scss ../../templates/PCHMTechnik/themes/pchm-technik/pchm-technik.css && sass --quiet --no-source-map --style=compressed ../../templates/PCHMTechnik/themes/pchm-technik/sass/pchm-technik_crit.scss ../../templates/PCHMTechnik/themes/pchm-technik/pchm-technik_crit.css",
+    "test:js": "node js/run.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0",
+    "sass": "1.77.8"
+  }
+}

@@ -1,0 +1,1 @@
+{block name='snippets-categories-mega-recursive'}{block name='snippets-categories-mega-recursive-max-subsub-items'}{$max_subsub_items="{if $isMobile}5{else}2{/if}"}{/block}MAX={$max_subsub_items}<ul>{block name='snippets-categories-mega-recursive-child-categories'}<li>child</li>{/block}</ul>{/block}

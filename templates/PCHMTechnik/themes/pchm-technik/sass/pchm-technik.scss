@@ -1,0 +1,23 @@
+//
+// PCHMTechnik – Haupt-Stylesheet
+// Kompiliert nach ../pchm-technik.css (JTL-Theme-Editor/Backend oder `npm run build` im Template-Ordner).
+// --------------------------------------------------
+
+// Core-Funktionen von NOVA
+@import '../../../../NOVA/themes/base/sass/functions';
+
+//#customVariables#
+
+// Theme-Variablen (PCHM-Standardwerte + NOVA "clear")
+@import 'variables';
+
+// Komplettes NOVA-"clear"-Theme
+@import '../../../../NOVA/themes/clear/sass/allstyles';
+
+// Lokal eingebundene Schriften (DSGVO-konform)
+@import 'fonts';
+
+// Funktionen des Technik-Templates
+@import 'pchm';
+
+//#customContent#
