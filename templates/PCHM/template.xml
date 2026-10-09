@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Template isFullResponsive="true">
+    <Name>PCHM</Name>
+    <Author>PCHM.de</Author>
+    <URL>https://www.pchm.de</URL>
+    <Parent>NOVA</Parent>
+    <Preview>preview.png</Preview>
+    <Version>2.0.0</Version>
+    <MinShopVersion>5.5.0</MinShopVersion>
+    <Description>Eigenes Template von PCHM.de auf Basis des JTL-Standard-Templates NOVA (Child-Template, updatesicher) mit PC-Konfigurator inkl. Kompatibilitätsprüfung.</Description>
+    <Settings>
+        <Section Name="Theme" Key="theme">
+            <Setting Description="Theme" Key="theme_default" Type="select" Value="pchm" override="true">
+                <Option Value="pchm">PCHM (basiert auf NOVA „clear“)</Option>
+            </Setting>
+        </Section>
+
+        <Section Name="PCHM – Design" Key="pchm_design">
+            <Setting Description="Markenfarbe (nur Bedienelemente: Buttons, aktive Zustände, Links, Fokus – DESIGN.md)" Key="color_primary" Type="colorpicker" Value="#9013fe"/>
+            <Setting Description="Markenfarbe Hover/aktiv" Key="color_primary_hover" Type="colorpicker" Value="#7a0fd9"/>
+            <Setting Description="Textfarbe auf Markenfarbe" Key="color_primary_contrast" Type="colorpicker" Value="#ffffff"/>
+            <Setting Description="Grundfarbe dunkel (Überschriften, dunkle Flächen)" Key="color_secondary" Type="colorpicker" Value="#171717" MarginBottom="true"/>
+            <Setting Description="Topbar Hintergrund" Key="color_topbar_bg" Type="colorpicker" Value="#171717" Subheader="Header"/>
+            <Setting Description="Topbar Text" Key="color_topbar_text" Type="colorpicker" Value="#ffffff"/>
+            <Setting Description="Header Hintergrund" Key="color_header_bg" Type="colorpicker" Value="#ffffff"/>
+            <Setting Description="Header Text/Icons" Key="color_header_text" Type="colorpicker" Value="#171717"/>
+            <Setting Description="Menüleiste Hintergrund" Key="color_nav_bg" Type="colorpicker" Value="#ffffff"/>
+            <Setting Description="Menüleiste Text" Key="color_nav_text" Type="colorpicker" Value="#171717" MarginBottom="true"/>
+            <Setting Description="Preisfarbe" Key="color_price" Type="colorpicker" Value="#171717" Subheader="Inhalt"/>
+            <Setting Description="Sonderpreis / Aktion" Key="color_special" Type="colorpicker" Value="#dc2626"/>
+            <Setting Description="Erfolg / Lieferbar / Kompatibel" Key="color_success" Type="colorpicker" Value="#15803d"/>
+            <Setting Description="Warnung / ungeprüft" Key="color_warning" Type="colorpicker" Value="#b45309"/>
+            <Setting Description="Fehler / nicht kompatibel" Key="color_danger" Type="colorpicker" Value="#dc2626"/>
+            <Setting Description="Seitenhintergrund" Key="color_body_bg" Type="colorpicker" Value="#ffffff" MarginBottom="true"/>
+            <Setting Description="Footer Hintergrund" Key="color_footer_bg" Type="colorpicker" Value="#171717" Subheader="Footer"/>
+            <Setting Description="Footer Text" Key="color_footer_text" Type="colorpicker" Value="#a3a3a3"/>
+            <Setting Description="Footer Überschriften" Key="color_footer_heading" Type="colorpicker" Value="#ffffff" MarginBottom="true"/>
+            <Setting Description="Schrift Fließtext (lokal eingebunden, DSGVO-konform)" Key="font_body" Type="select" Value="manrope" Subheader="Schriften">
+                <Option Value="manrope">Manrope (Markenschrift)</Option>
+                <Option Value="inter">Inter</Option>
+                <Option Value="system">Systemschrift</Option>
+                <Option Value="nova">NOVA-Standard (Open Sans)</Option>
+            </Setting>
+            <Setting Description="Schrift Überschriften" Key="font_heading" Type="select" Value="roboto-condensed">
+                <Option Value="roboto-condensed">Roboto Condensed (Markenschrift)</Option>
+                <Option Value="manrope">Manrope</Option>
+                <Option Value="inter">Inter</Option>
+                <Option Value="system">Systemschrift</Option>
+                <Option Value="nova">NOVA-Standard (Montserrat)</Option>
+            </Setting>
+            <Setting Description="Eckenradius Buttons/Felder in px (Flächen +2 px)" Key="border_radius" Type="number" Value="6"/>
+            <Setting Description="Maximale Seitenbreite (in px, 0 = NOVA-Standard)" Key="container_max_width" Type="number" Value="0"/>
+        </Section>
+
+        <Section Name="PCHM – Header" Key="pchm_header">
+            <Setting Description="Hinweisleiste über dem Header anzeigen" Key="announcement_active" Type="select" Value="N" Subheader="Hinweisleiste">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Hinweistext (mehrsprachig: „de=Text || en=Text“ oder „lang:variable“)" Key="announcement_text" Type="text" Value="Kostenloser Versand innerhalb Deutschlands ab 100 €"/>
+            <Setting Description="Hinweis-Link (optional)" Key="announcement_link" Type="text" Value=""/>
+            <Setting Description="Countdown bis (optional, Format JJJJ-MM-TT HH:MM)" Key="announcement_countdown" Type="text" Value=""/>
+            <Setting Description="Hinweisleiste Hintergrund" Key="announcement_bg" Type="colorpicker" Value="#171717"/>
+            <Setting Description="Hinweisleiste Text" Key="announcement_color" Type="colorpicker" Value="#ffffff"/>
+            <Setting Description="Hinweisleiste wegklickbar" Key="announcement_dismissible" Type="select" Value="Y" MarginBottom="true">
+                <Option Value="Y">Ja (wird 7 Tage ausgeblendet)</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="USP-Leiste in der Topbar anzeigen" Key="usp_topbar" Type="select" Value="Y" Subheader="USP-Leiste (Topbar)">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="USP 1 – Icon (Font Awesome 5, z. B. „fas fa-truck“)" Key="usp1_icon" Type="text" Value="fas fa-truck"/>
+            <Setting Description="USP 1 – Text" Key="usp1_text" Type="text" Value="de=Schneller Versand || en=Fast shipping"/>
+            <Setting Description="USP 2 – Icon" Key="usp2_icon" Type="text" Value="fas fa-tools"/>
+            <Setting Description="USP 2 – Text" Key="usp2_text" Type="text" Value="de=Handmontiert in Deutschland || en=Hand-built in Germany"/>
+            <Setting Description="USP 3 – Icon" Key="usp3_icon" Type="text" Value="fas fa-fire"/>
+            <Setting Description="USP 3 – Text" Key="usp3_text" Type="text" Value="de=24h-Stresstest für jeden PC || en=24h stress test for every PC"/>
+            <Setting Description="USP 4 – Icon" Key="usp4_icon" Type="text" Value="fas fa-shield-alt"/>
+            <Setting Description="USP 4 – Text" Key="usp4_text" Type="text" Value="de=Käuferschutz mit Trusted Shops || en=Buyer protection by Trusted Shops" MarginBottom="true"/>
+            <Setting Description="Hotline in der Topbar anzeigen" Key="hotline_topbar" Type="select" Value="Y" Subheader="Kontakt">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Telefonnummer" Key="phone" Type="text" Value=""/>
+            <Setting Description="Servicezeiten" Key="service_hours" Type="text" Value="de=Mo–Fr 12–17 Uhr || en=Mon–Fri 12pm–5pm"/>
+            <Setting Description="E-Mail-Adresse" Key="email" Type="text" Value="team@pchm.de" MarginBottom="true"/>
+            <Setting Description="Sticky Header (beim Scrollen sichtbar)" Key="sticky" Type="select" Value="all" Subheader="Verhalten">
+                <Option Value="all">Auf allen Geräten</Option>
+                <Option Value="desktop">Nur Desktop</Option>
+                <Option Value="tablet_desktop">Tablet und Desktop</Option>
+                <Option Value="mobile">Nur Smartphone</Option>
+                <Option Value="none">Aus</Option>
+            </Setting>
+            <Setting Description="Warenkorb als Seitenleiste (Side-Basket)" Key="side_basket" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein (NOVA-Dropdown)</Option>
+            </Setting>
+            <Setting Description="Side-Basket nach „In den Warenkorb“ automatisch öffnen" Key="side_basket_autoopen" Type="select" Value="Y">
+                <Option Value="Y">Ja (ersetzt das NOVA-Popup)</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Anmeldung/Registrierung als Seitenleiste" Key="side_account" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein (NOVA-Dropdown)</Option>
+            </Setting>
+            <Setting Description="Neuigkeiten-Glocke (Seitenleiste mit News)" Key="news_bell" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Anzahl News in der Glocke" Key="news_bell_count" Type="number" Value="5"/>
+            <Setting Description="Umschalter Netto-/Bruttopreise (Privat/Gewerbe) im Header" Key="price_switch" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Suchfeld Platzhaltertext (leer = NOVA-Standard)" Key="search_placeholder" Type="text" Value="de=Wonach suchst du? z. B. RTX 5080, AM5 Mainboard … || en=What are you looking for?"/>
+        </Section>
+
+        <Section Name="PCHM – Megamenü" Key="pchm_megamenu">
+            <Setting Description="Tiefe des Dropdown-Megamenüs (Ebenen unterhalb der Hauptkategorie)" Key="depth" Type="select" Value="2">
+                <Option Value="1">1 Ebene</Option>
+                <Option Value="2">2 Ebenen (NOVA-Standard)</Option>
+                <Option Value="3">3 Ebenen</Option>
+                <Option Value="4">4 Ebenen</Option>
+            </Setting>
+            <Setting Description="Unterkategorien öffnen (nur Desktop)" Key="open_mode" Type="select" Value="hover">
+                <Option Value="hover">Bei Hover</Option>
+                <Option Value="click">Bei Klick</Option>
+            </Setting>
+            <Setting Description="Spalten im Megamenü (Desktop)" Key="columns" Type="select" Value="4">
+                <Option Value="3">3</Option>
+                <Option Value="4">4 (NOVA-Standard)</Option>
+                <Option Value="5">5</Option>
+                <Option Value="6">6</Option>
+            </Setting>
+            <Setting Description="Link „Alle anzeigen“ unter Unterkategorien" Key="show_all_link" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+        </Section>
+
+        <Section Name="PCHM – Startseite" Key="pchm_home">
+            <Setting Description="Reihenfolge der Startseiten-Elemente (kommagetrennt: usps, specials, categories, countdown, brands, nova)" Key="order" Type="text" Value="usps,categories,specials,countdown,nova,brands"/>
+            <Setting Description="USP-Kacheln anzeigen (nutzt die USPs aus „Header“)" Key="usps" Type="select" Value="Y" Subheader="USP-Kacheln">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Preisaktionen-Slider anzeigen" Key="specials" Type="select" Value="Y" Subheader="Preisaktionen">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Quelle des Preisaktionen-Sliders" Key="specials_source" Type="select" Value="2">
+                <Option Value="2">Sonderangebote</Option>
+                <Option Value="4">Top-Angebote</Option>
+                <Option Value="3">Neu im Sortiment</Option>
+                <Option Value="1">Bestseller</Option>
+            </Setting>
+            <Setting Description="Überschrift Preisaktionen" Key="specials_title" Type="text" Value="de=Aktuelle Preisaktionen || en=Current deals"/>
+            <Setting Description="Anzahl Artikel" Key="specials_count" Type="number" Value="12"/>
+            <Setting Description="Countdown bis Aktionsende auf Artikeln anzeigen" Key="specials_countdown" Type="select" Value="Y" MarginBottom="true">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Kategorie-Kacheln anzeigen" Key="categories" Type="select" Value="Y" Subheader="Kategorie-Kacheln">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Überschrift Kategorie-Kacheln" Key="categories_title" Type="text" Value="de=Beliebte Kategorien || en=Popular categories"/>
+            <Setting Description="Kategorie-IDs (kKategorie, kommagetrennt; leer = Hauptkategorien)" Key="categories_ids" Type="text" Value=""/>
+            <Setting Description="Maximale Anzahl Kacheln" Key="categories_count" Type="number" Value="8" MarginBottom="true"/>
+            <Setting Description="Countdown-Block (Parallax) anzeigen" Key="countdown" Type="select" Value="N" Subheader="Countdown-Block (Parallax)">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Ablaufdatum (JJJJ-MM-TT HH:MM) – danach wird der Block ausgeblendet" Key="countdown_end" Type="text" Value=""/>
+            <Setting Description="Hintergrundbild (URL, z. B. /mediafiles/Bilder/aktion.jpg)" Key="countdown_image" Type="text" Value=""/>
+            <Setting Description="Überschrift" Key="countdown_title" Type="text" Value="de=Black Week – bis zu 20 % auf Gaming-PCs || en=Black Week – up to 20 % off gaming PCs"/>
+            <Setting Description="Text" Key="countdown_text" Type="text" Value="de=Nur solange der Vorrat reicht. || en=While stocks last."/>
+            <Setting Description="Button-Text" Key="countdown_button" Type="text" Value="de=Jetzt sichern || en=Shop now"/>
+            <Setting Description="Button-Link" Key="countdown_link" Type="text" Value="" MarginBottom="true"/>
+            <Setting Description="Hersteller-Slider anzeigen" Key="brands" Type="select" Value="Y" Subheader="Hersteller-Slider">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Überschrift Hersteller-Slider" Key="brands_title" Type="text" Value="de=Unsere Marken || en=Our brands"/>
+            <Setting Description="Maximale Anzahl Hersteller" Key="brands_count" Type="number" Value="24"/>
+            <Setting Description="Herstellerlogos in Graustufen (farbig bei Hover)" Key="brands_grayscale" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+        </Section>
+
+        <Section Name="PCHM – Artikelliste" Key="pchm_list">
+            <Setting Description="Position der Kategoriebeschreibung" Key="description_position" Type="select" Value="top">
+                <Option Value="top">Oben (NOVA-Standard)</Option>
+                <Option Value="bottom">Unten unter den Artikeln</Option>
+                <Option Value="none">Nicht anzeigen</Option>
+            </Setting>
+            <Setting Description="Lange Kategoriebeschreibung einklappen („Weiterlesen“)" Key="description_collapse" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Unterkategorien anzeigen" Key="subcategories" Type="select" Value="Y">
+                <Option Value="Y">Ja (NOVA-Einstellungen)</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Artikel pro Zeile – Smartphone (Galerie)" Key="cols_mobile" Type="select" Value="2" Subheader="Galerieansicht">
+                <Option Value="1">1</Option>
+                <Option Value="2">2</Option>
+            </Setting>
+            <Setting Description="Artikel pro Zeile – Tablet (Galerie)" Key="cols_tablet" Type="select" Value="3">
+                <Option Value="2">2</Option>
+                <Option Value="3">3</Option>
+                <Option Value="4">4</Option>
+            </Setting>
+            <Setting Description="Artikel pro Zeile – Desktop (Galerie)" Key="cols_desktop" Type="select" Value="4">
+                <Option Value="2">2</Option>
+                <Option Value="3">3</Option>
+                <Option Value="4">4</Option>
+                <Option Value="6">6</Option>
+            </Setting>
+            <Setting Description="Filter-Seitenleiste auf Desktop ein-/ausklappbar" Key="sidebar_toggle" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+        </Section>
+
+        <Section Name="PCHM – Artikeldetails" Key="pchm_details">
+            <Setting Description="Sprungnavigation zu den Tabs (Beschreibung, Bewertungen …)" Key="tab_jumpnav" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Sticky Kaufleiste beim Scrollen" Key="sticky_buybar" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Gesamtbetrag (Menge × Preis) im Warenkorb-Button anzeigen" Key="button_total" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Dokumente (PDF/Mediendateien) neben dem Kaufbereich anzeigen" Key="documents" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Vertrauens-Box unter dem Warenkorb-Button" Key="trust_box" Type="select" Value="Y" Subheader="Vertrauens-Box">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Vertrauens-Box Zeile 1" Key="trust1" Type="text" Value="de=24h-Stresstest vor dem Versand || en=24h stress test before shipping"/>
+            <Setting Description="Vertrauens-Box Zeile 2" Key="trust2" Type="text" Value="de=Markenkomponenten mit Herstellergarantie || en=Brand components with manufacturer warranty"/>
+            <Setting Description="Vertrauens-Box Zeile 3" Key="trust3" Type="text" Value="de=Persönlicher Support per Telefon und E-Mail || en=Personal support by phone and e-mail"/>
+            <Setting Description="Vertrauens-Box Zeile 4" Key="trust4" Type="text" Value="de=Sichere Zahlung und Käuferschutz || en=Secure payment and buyer protection"/>
+        </Section>
+
+        <Section Name="PCHM – Konfigurator" Key="pchm_konfigurator">
+            <Setting Description="Gruppen-Navigation mit Fortschritt (springt zu CPU, Grafikkarte …)" Key="group_nav" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Kompatibilitätsprüfung (Regeln wie api/_hardware.php der Companion App)" Key="compat" Type="select" Value="Y" Subheader="Kompatibilität">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Nicht kompatible Optionen" Key="compat_mode" Type="select" Value="mark">
+                <Option Value="mark">kennzeichnen (Hinweis, weiterhin wählbar)</Option>
+                <Option Value="disable">sperren (nicht wählbar)</Option>
+            </Setting>
+            <Setting Description="„In den Warenkorb“ bei Konflikt sperren" Key="compat_block_cart" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein (nur Hinweis)</Option>
+            </Setting>
+            <Setting Description="Netzteil-Empfehlung anzeigen (CPU-TDP + GPU-TDP + 120 W) × 1,4" Key="psu_hint" Type="select" Value="Y" MarginBottom="true">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Merkmal-Namen für Sockel (kommagetrennt; Funktionsattribut pchm_socket hat Vorrang)" Key="m_socket" Type="text" Value="Sockel,CPU-Sockel,Prozessorsockel" Subheader="Datenquellen (Merkmale aus JTL-Wawi)"/>
+            <Setting Description="Merkmal-Namen für RAM-Typ (pchm_ram_type)" Key="m_ram_type" Type="text" Value="Speichertyp,RAM-Typ,Arbeitsspeichertyp"/>
+            <Setting Description="Merkmal-Namen für TDP in Watt (pchm_tdp_watts)" Key="m_tdp_watts" Type="text" Value="TDP,Leistungsaufnahme"/>
+            <Setting Description="Merkmal-Namen für Grafikkartenlänge in mm (pchm_length_mm)" Key="m_length_mm" Type="text" Value="Länge,Kartenlänge"/>
+            <Setting Description="Merkmal-Namen für Kühler-Bauhöhe in mm (pchm_height_mm)" Key="m_height_mm" Type="text" Value="Bauhöhe,Höhe"/>
+            <Setting Description="Merkmal-Namen für max. Grafikkartenlänge im Gehäuse (pchm_max_gpu_length_mm)" Key="m_max_gpu_length_mm" Type="text" Value="Max. Grafikkartenlänge,Grafikkartenlänge max."/>
+            <Setting Description="Merkmal-Namen für max. Kühlerhöhe im Gehäuse (pchm_max_cooler_height_mm)" Key="m_max_cooler_height_mm" Type="text" Value="Max. CPU-Kühlerhöhe,CPU-Kühlerhöhe max."/>
+            <Setting Description="Merkmal-Namen für Netzteilleistung in Watt (pchm_psu_watts)" Key="m_psu_watts" Type="text" Value="Leistung,Nennleistung" MarginBottom="true"/>
+            <Setting Description="Platz für die 3D-Vorschau (Plugin pchm_konfigurator3d)" Key="mount_3d" Type="select" Value="auto" Subheader="3D-Vorschau">
+                <Option Value="auto">automatisch (Plugin entscheidet: Seitenleiste bzw. über den Optionen)</Option>
+                <Option Value="top">fest über den Konfigurator-Optionen</Option>
+                <Option Value="none">kein fester Platz</Option>
+            </Setting>
+        </Section>
+
+        <Section Name="PCHM – Warenkorb" Key="pchm_basket">
+            <Setting Description="Fortschrittsbalken „Noch X € bis versandkostenfrei“" Key="free_shipping_bar" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Versandkostenfrei ab (Bruttobetrag, 0 = aus)" Key="free_shipping_from" Type="number" Value="100"/>
+        </Section>
+
+        <Section Name="PCHM – Footer" Key="pchm_footer">
+            <Setting Description="Kontaktblock im Footer" Key="contact" Type="select" Value="Y">
+                <Option Value="Y">Ja</Option>
+                <Option Value="N">Nein</Option>
+            </Setting>
+            <Setting Description="Kontaktblock Überschrift" Key="contact_title" Type="text" Value="de=Fragen? Wir helfen gerne! || en=Questions? We are happy to help!"/>
+            <Setting Description="Adresse (einzeilig, Zeilenumbruch mit „|“)" Key="address" Type="text" Value="PCHM Exklusiv|Am Mittelpfad 16|50374 Erftstadt" MarginBottom="true"/>
+            <Setting Description="Zahlungsarten im Footer (kommagetrennt)" Key="payments" Type="text" Value="paypal,visa,mastercard,klarna,applepay,googlepay,sepa,prepayment" Subheader="Zahlung &amp; Versand"/>
+            <Setting Description="Versandpartner im Footer (kommagetrennt)" Key="carriers" Type="text" Value="dhl,dpd"/>
+            <Setting Description="Zusätzliche Social-Media-Links (Discord, Twitch, X), je „Name=URL“ mit „||“ getrennt" Key="social_extra" Type="text" Value="" Subheader="Social Media"/>
+            <Setting Description="Freier Text/HTML unter den Footer-Boxen (z. B. Trusted-Shops-Siegel)" Key="custom_html" Type="textarea" Value=""/>
+        </Section>
+    </Settings>
+    <Minify>
+        <CSS Name="pchm.css">
+            <File Path="themes/pchm/pchm.css"/>
+            <File Path="themes/pchm/custom.css"/>
+        </CSS>
+    </Minify>
+    <Boxes>
+        <Container Position="left" Available="1"/>
+        <Container Position="right" Available="0"/>
+        <Container Position="top" Available="0"/>
+        <Container Position="bottom" Available="1"/>
+    </Boxes>
+</Template>

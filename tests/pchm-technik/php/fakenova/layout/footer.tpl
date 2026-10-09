@@ -1,1 +1,0 @@
-{block name='layout-footer'}<footer>{block name='layout-footer-boxes'}<boxes/>{/block}{block name='layout-footer-additional'}<social/>{/block}</footer>{block name='layout-footer-io-path'}<div id="jtl-io-path"></div>{/block}</body>{/block}

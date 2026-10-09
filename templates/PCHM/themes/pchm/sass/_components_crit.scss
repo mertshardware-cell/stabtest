@@ -1,0 +1,271 @@
+//
+// PCHM – Critical CSS (Header, Hinweisleiste, Topbar, Schriften, Sticky)
+// Farben kommen als CSS-Variablen aus den Template-Einstellungen; hier nur Standardwerte.
+// --------------------------------------------------
+
+:where(:root) {
+    --pchm-primary: #{$primary};
+    --pchm-primary-hover: #{darken($primary, 8%)};
+    --pchm-primary-contrast: #ffffff;
+    --pchm-secondary: #{$secondary};
+    --pchm-topbar-bg: #{$secondary};
+    --pchm-topbar-text: #ffffff;
+    --pchm-header-bg: #{$header-bg-color};
+    --pchm-header-text: #{$header-color};
+    --pchm-nav-bg: #{$header-bg-color};
+    --pchm-nav-text: #{$header-color};
+    --pchm-price: #{$secondary};
+    --pchm-special: #dc2626;
+    --pchm-success: #{$pchm-success};
+    --pchm-warning: #b45309;
+    --pchm-danger: #dc2626;
+    --pchm-body-bg: #ffffff;
+    --pchm-footer-bg: #{$footer-bg-color};
+    --pchm-footer-text: #{$footer-color};
+    --pchm-footer-heading: #ffffff;
+    --pchm-radius: #{$pchm-radius};
+    --pchm-radius-lg: #{$pchm-radius + 2px};
+    --pchm-announcement-bg: #{$secondary};
+    --pchm-announcement-color: #ffffff;
+    --pchm-mm-col: 25%;
+    --pchm-offcanvas-width: 420px;
+}
+
+// ---------- Schriften ----------
+body {
+    font-family: var(--pchm-font-body, #{$font-family-sans-serif});
+    background-color: var(--pchm-body-bg);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.hr-sect, .productlist-filter-headline, .pchm-offcanvas-title {
+    font-family: var(--pchm-font-heading, #{$headings-font-family});
+}
+
+// ---------- Seitenbreite ----------
+.container-fluid-xl {
+    max-width: var(--pchm-container-max, #{rem(1650px)});
+}
+
+// ---------- Hinweisleiste ----------
+.pchm-announcement {
+    background-color: var(--pchm-announcement-bg);
+    color: var(--pchm-announcement-color);
+    font-size: $font-size-sm;
+    position: relative;
+    z-index: $zindex-sticky + 2;
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+.pchm-announcement-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: map-get($spacers, 1) map-get($spacers, 3);
+    min-height: rem(36px);
+    padding-top: map-get($spacers, 1);
+    padding-bottom: map-get($spacers, 1);
+    padding-right: rem(40px);
+    text-align: center;
+}
+
+.pchm-announcement-text,
+.pchm-announcement-text:hover {
+    color: inherit;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+}
+
+a.pchm-announcement-text:hover {
+    text-decoration: underline;
+}
+
+.pchm-announcement-close {
+    position: absolute;
+    right: map-get($spacers, 2);
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    color: inherit;
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+    line-height: 1;
+    cursor: pointer;
+    opacity: .85;
+
+    &:hover, &:focus {
+        opacity: 1;
+    }
+}
+
+// ---------- Topbar ----------
+#header-top-bar {
+    background-color: var(--pchm-topbar-bg);
+    color: var(--pchm-topbar-text);
+    font-size: $font-size-sm;
+}
+
+#header-top-bar a:not(.dropdown-item):not(.btn),
+#header-top-bar .nav-link {
+    color: var(--pchm-topbar-text);
+
+    &:hover {
+        color: var(--pchm-topbar-text);
+        opacity: .8;
+    }
+}
+
+.pchm-topbar-usps {
+    order: 10;
+    margin-right: auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        padding: map-get($spacers, 1) map-get($spacers, 3) map-get($spacers, 1) 0;
+    }
+
+    .pchm-usp-icon {
+        opacity: .75;
+        margin-right: map-get($spacers, 2);
+    }
+}
+
+.pchm-hotline-link {
+    font-weight: $font-weight-semibold;
+    white-space: nowrap;
+
+    .fas {
+        margin-right: map-get($spacers, 1);
+    }
+}
+
+.pchm-hotline-hours {
+    margin-left: map-get($spacers, 1);
+    opacity: .75;
+}
+
+.pchm-topbar-switch {
+    order: 5;
+    display: flex;
+    align-items: center;
+    margin-left: map-get($spacers, 3);
+}
+
+// ---------- Header ----------
+header#jtl-nav-wrapper {
+    background-color: var(--pchm-header-bg);
+    color: var(--pchm-header-text);
+}
+
+#jtl-nav-wrapper a:not(.dropdown-item):not(.btn) {
+    color: var(--pchm-header-text);
+
+    &:hover {
+        color: var(--pchm-primary);
+    }
+}
+
+#jtl-nav-wrapper .form-control,
+#jtl-nav-wrapper .form-control:focus {
+    background-color: var(--pchm-header-bg);
+    color: var(--pchm-header-text);
+}
+
+// Menü in eigener Zeile (NOVA: „Menü in eigener Zeile anzeigen")
+header.full-width-mega .navbar-collapse,
+header .nav-scrollbar-inner {
+    background-color: var(--pchm-nav-bg);
+}
+
+@include media-breakpoint-up(lg) {
+    #mainNavigation .navbar-nav > .nav-item > .nav-link,
+    #jtl-nav-wrapper #mainNavigation .navbar-nav > .nav-item > .nav-link {
+        color: var(--pchm-nav-text);
+    }
+
+    #mainNavigation .navbar-nav > .nav-item > .nav-link::before {
+        border-color: var(--pchm-primary);
+    }
+}
+
+// ---------- Sticky Header je Gerät ----------
+// Smartphone < 768px, Tablet 768–991px, Desktop ≥ 992px
+@include media-breakpoint-down(md) {
+    .pchm-sticky-desktop #jtl-nav-wrapper.sticky-top {
+        position: relative;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .pchm-sticky-tablet_desktop #jtl-nav-wrapper.sticky-top {
+        position: relative;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .pchm-sticky-mobile #jtl-nav-wrapper.sticky-top {
+        position: relative;
+    }
+}
+
+.pchm-sticky-none #jtl-nav-wrapper.sticky-top {
+    position: relative;
+}
+
+// ---------- Mobile USP-Leiste ----------
+.pchm-usp-mobile {
+    position: relative;
+    height: rem(32px);
+    overflow: hidden;
+    background-color: var(--pchm-topbar-bg);
+    color: var(--pchm-topbar-text);
+    font-size: $font-size-sm;
+}
+
+.pchm-usp-mobile-item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($spacers, 2);
+    padding: 0 map-get($spacers, 3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity .35s ease, transform .35s ease;
+
+    &.is-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fas, .fab, .far {
+        opacity: .75;
+    }
+}
+
+// Header-Icons (Glocke, Konto, Warenkorb)
+.pchm-news-bell .fa-bell {
+    position: relative;
+}
+
+.pchm-news-dot {
+    min-width: rem(10px);
+    height: rem(10px);
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--pchm-danger);
+}

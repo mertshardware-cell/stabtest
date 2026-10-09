@@ -1,0 +1,11 @@
+//
+// PCHM – Critical CSS (wird inline im <head> ausgegeben)
+// --------------------------------------------------
+
+@import '../../../../NOVA/themes/base/sass/functions';
+
+@import 'variables';
+
+@import '../../../../NOVA/themes/clear/sass/clear_crit.scss';
+
+@import 'components_crit';

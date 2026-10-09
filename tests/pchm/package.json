@@ -1,0 +1,15 @@
+{
+  "name": "pchm-tests",
+  "private": true,
+  "description": "Tests und Build für das NOVA-Child-Template PCHM",
+  "scripts": {
+    "build:css": "sass --quiet --style=expanded ../../templates/PCHM/themes/pchm/sass/pchm.scss ../../templates/PCHM/themes/pchm/pchm.css && sass --quiet --no-source-map --style=compressed ../../templates/PCHM/themes/pchm/sass/pchm_crit.scss ../../templates/PCHM/themes/pchm/pchm_crit.css",
+    "test:js": "node js/run.mjs",
+    "test:rules": "node --test js/konfigurator-rules.test.mjs",
+    "test:cfg": "node js/konfigurator.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0",
+    "sass": "1.77.8"
+  }
+}
