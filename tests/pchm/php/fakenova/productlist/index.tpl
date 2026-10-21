@@ -1,0 +1,1 @@
+{block name='productlist-index'}{block name='productlist-index-include-productlist-header-grid-gallery'}{assign var=grid value='6'}{assign var=gridsm value='6'}{assign var=gridmd value='4'}{assign var=gridxl value='3'}{/block}GRID={$grid}/{$gridsm}/{$gridmd}/{$gridxl}{block name='productlist-index-include-productlist-footer'}<footer-nova>{/block}{/block}
